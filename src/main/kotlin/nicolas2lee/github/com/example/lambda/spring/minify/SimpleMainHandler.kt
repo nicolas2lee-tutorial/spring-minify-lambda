@@ -5,17 +5,18 @@ import com.amazonaws.services.lambda.runtime.RequestHandler
 import nicolas2lee.github.com.example.lambda.spring.minify.function.Function
 import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
-class Main : RequestHandler<String, String> {
-    private val function: Function
+typealias TestStringType = Map<String, String>?
+
+class SimpleMainHandler : RequestHandler<TestStringType, TestStringType> {
+    private val function: Function<TestStringType, TestStringType>
 
     init {
         val context =
             AnnotationConfigApplicationContext("nicolas2lee.github.com.example.lambda.spring.minify")
-        context.refresh()
-        function = context.getBean("upperFunction") as Function
+        function = context.getBean("upperFunction") as Function<TestStringType, TestStringType>
     }
 
-    override fun handleRequest(input: String?, context: Context?): String {
+    override fun handleRequest(input: TestStringType, context: Context?): TestStringType {
         return function.apply(input)
     }
 }

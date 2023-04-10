@@ -8,7 +8,7 @@ plugins {
 
 group = "nicolas2lee.github.com"
 version = "0.0.1-SNAPSHOT"
-java.sourceCompatibility = JavaVersion.VERSION_17
+java.sourceCompatibility = JavaVersion.VERSION_11
 
 repositories {
     mavenCentral()
@@ -21,8 +21,7 @@ dependencies {
     implementation("com.amazonaws:aws-lambda-java-core:1.2.2")
 
     implementation("org.jetbrains.kotlin:kotlin-reflect")
-
-    implementation("org.springframework:spring-context:6.0.7")
+    implementation("org.springframework:spring-context:5.3.26")
 
 }
 
@@ -37,12 +36,15 @@ tasks.withType<Test> {
     useJUnitPlatform()
 }
 
+
+/*
 tasks.withType<Jar> {
     enabled = true
     manifest {
         attributes["Main-Class"] = "nicolas2lee.github.com.example.lambda.spring.minify.Main"
     }
 }
+ */
 
 tasks["assemble"].dependsOn("shadowJar")
 
