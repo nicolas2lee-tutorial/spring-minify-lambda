@@ -1,6 +1,6 @@
-package nicolas2lee.github.com.example.lambda.spring.minify.function
+package com.github.nicolas2lee.example.lambda.spring.minify.function
 
-import nicolas2lee.github.com.example.lambda.spring.minify.TestStringType
+import com.github.nicolas2lee.example.lambda.spring.minify.TestStringType
 import org.springframework.stereotype.Service
 
 

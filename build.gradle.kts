@@ -6,7 +6,7 @@ plugins {
     kotlin("plugin.spring") version "1.6.21"
 }
 
-group = "nicolas2lee.github.com"
+group = "com.github.nicolas2lee"
 version = "0.0.1-SNAPSHOT"
 java.sourceCompatibility = JavaVersion.VERSION_11
 
@@ -41,7 +41,7 @@ tasks.withType<Test> {
 tasks.withType<Jar> {
     enabled = true
     manifest {
-        attributes["Main-Class"] = "nicolas2lee.github.com.example.lambda.spring.minify.Main"
+        attributes["Main-Class"] = "com.github.nicolas2lee.example.lambda.spring.minify"
     }
 }
  */

@@ -1,4 +1,4 @@
-package nicolas2lee.github.com.example.lambda.spring.minify.function
+package com.github.nicolas2lee.example.lambda.spring.minify.function
 
 import com.amazonaws.services.lambda.runtime.events.APIGatewayProxyRequestEvent
 import com.amazonaws.services.lambda.runtime.events.APIGatewayProxyResponseEvent

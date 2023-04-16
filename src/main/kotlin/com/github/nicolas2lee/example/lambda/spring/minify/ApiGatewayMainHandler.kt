@@ -1,10 +1,10 @@
-package nicolas2lee.github.com.example.lambda.spring.minify
+package com.github.nicolas2lee.example.lambda.spring.minify
 
 import com.amazonaws.services.lambda.runtime.Context
 import com.amazonaws.services.lambda.runtime.RequestHandler
 import com.amazonaws.services.lambda.runtime.events.APIGatewayProxyRequestEvent
 import com.amazonaws.services.lambda.runtime.events.APIGatewayProxyResponseEvent
-import nicolas2lee.github.com.example.lambda.spring.minify.function.Function
+import com.github.nicolas2lee.example.lambda.spring.minify.function.Function
 import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 class ApiGatewayMainHandler : RequestHandler<APIGatewayProxyRequestEvent, APIGatewayProxyResponseEvent> {
@@ -12,7 +12,7 @@ class ApiGatewayMainHandler : RequestHandler<APIGatewayProxyRequestEvent, APIGat
 
     init {
         val context =
-            AnnotationConfigApplicationContext("nicolas2lee.github.com.example.lambda.spring.minify")
+            AnnotationConfigApplicationContext("com.github.nicolas2lee.example.lambda.spring.minify")
         function =
             context.getBean("gatewayUpperFunction") as Function<APIGatewayProxyRequestEvent, APIGatewayProxyResponseEvent>
     }
